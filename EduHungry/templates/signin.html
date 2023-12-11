@@ -1,0 +1,42 @@
+{% include "header.html" %}
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'form.css'%}" />
+
+
+</head>
+<body>
+    <div  class="container">
+        <h1>log-in</h1>
+        <div id="container" class="containers">
+        <form method="POST">
+        {% csrf_token %}
+            
+
+            <label htmlFor="username">username</label>
+             <input type="text" name="username" id="username" placeholder="write your full name" required>
+            <label htmlfor="Password">Password</label>
+            <input type="password" id="Password2" placeholder="**************" required>
+
+             <input class="button-form" id="submit" type="submit" value="Submit">
+        </form>
+            
+            
+        </div>
+     
+    </div>
+
+    
+
+<form method="post">
+{ %csrf_token%}
+{{ user_form.as_p}}
+<button type="submit"> Submit</button>
+</body>
+</html>

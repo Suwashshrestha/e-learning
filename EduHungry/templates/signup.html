@@ -1,0 +1,39 @@
+{% include "header.html" %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'form.css'%}" />
+
+
+</head>
+<body>
+    <div  class="container">
+        <h1>Creating account</h1>
+        <form  method="POST">
+        {% csrf_token %}
+        <div id="container" class="containers">
+       
+          <label htmlFor="name">Full Name</label>
+            <input type="text" name="username" id="username" placeholder="write your full name" required>
+            <br>
+
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="write your mail"required>
+
+            <label htmlfor="Password">Password</label>
+            <input type="password" id="password" name="password" placeholder="**************"required>
+            <input class="button-form" id="submit" type="submit" value="Submit">
+            <h3>Already have an account</h3>
+            <button class="buttons-form" id="sign-in" type="submit"><a href="/signin">sign-in</a></button>
+        </div>
+        </form>
+     
+    </div>
+    
+</body>
+
+</html>

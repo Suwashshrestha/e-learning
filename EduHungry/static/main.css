@@ -1,0 +1,219 @@
+.headers {
+
+    height: 122px;
+    background: rgba(34, 62, 208, 0.55);
+    padding-left: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.headers .logos {
+    
+    height: 61px;
+    background-color: rgb(13, 95, 136);
+}
+
+.headers .right-side {
+    float: right;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.headers a {
+    color: #000;
+    font-family: Roboto;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    float: left;
+    text-align: center;
+    padding: 20px;
+}
+
+/* .First-page-full{
+    /* width: 1440px;
+height: 1024px; }*/
+
+.First-page-full {
+    /* width: 1440px; */
+    height: 1024px;
+
+}
+
+.First-page {
+
+    /* height: 1024px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.first-page-text h1 {
+    width: 564px;
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.first-page-text p {
+    color: #000;
+    font-family: Roboto;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 549px;
+
+}
+
+.click {
+    width: 355px;
+    height: 78px;
+    flex-shrink: 0;
+    background-color: #7A9FFF;
+    border-radius: 10px;
+
+}
+
+.img {
+    float: right;
+    display: flex;
+    justify-content: space-between;
+}
+
+.click p {
+    text-align: left;
+    flex-shrink: 0;
+    color: #0c0000;
+    font-family: Roboto;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: auto;
+
+}
+
+.first-page-text-last {
+
+    color: #000;
+    font-family: Roboto;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-page-full {
+    /* width: 1440px; */
+    height: 1024px;
+
+
+}
+
+.second-page-topic {
+    
+    color: #000;
+    font-family: Roboto;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.second-page-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    
+}
+
+.second-page-buttons {
+    height: 222px;
+    flex-shrink: 0;
+    background: #7A9FFF;
+    width: 250px;
+    margin-right: 44px;
+
+}
+.second-page-buttons h1{
+    color: #FDFDFD;
+font-family: Roboto;
+font-size: 36px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.second-page-below{
+    margin-top: 150px;
+}
+.second-page-second-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    
+}
+.second-page-seconds-buttons1 {
+    width: 279.073px;
+height: 254px;
+flex-shrink: 0;
+background: #29BD64;
+    margin-right: 44px;
+
+}
+.second-page-seconds-buttons2 {
+    width: 279.073px;
+height: 254px;
+flex-shrink: 0;
+background:#465692;
+    margin-right: 44px;
+
+}
+.second-page-seconds-buttons3 {
+    width: 279.073px;
+height: 254px;
+flex-shrink: 0;
+background:  #E87878;
+    margin-right: 44px;
+
+}
+.popupContainer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 9999; /* Make sure the popup is on top of other elements */
+  }
+
+  .popupContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
