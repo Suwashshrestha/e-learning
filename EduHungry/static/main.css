@@ -78,10 +78,10 @@ height: 1024px; }*/
 }
 
 .click {
-    width: 355px;
+    width: 400px;
     height: 78px;
     flex-shrink: 0;
-    background-color: #7A9FFF;
+    background-color: #151597;
     border-radius: 10px;
 
 }
