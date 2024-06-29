@@ -133,7 +133,14 @@ const NAV = () => {
               />
             </div>
           </form> */}
-          <Button variant="outline" className="ml-auto">Sign In</Button>
+          
+          <Link
+                href="/auth/login"
+                className="ml-auto"
+              >
+               <Button variant="outline" >Login</Button>
+              </Link>
+          
           <Button variant="outline">Sign UP</Button>
 
         </div>
