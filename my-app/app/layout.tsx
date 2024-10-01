@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import  NAV from "@/components/custom/nav"
+import  NAV from "@/app/home/page"
+import Footer from "@/components/custom/footer"
 import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,11 +21,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("min-h-screen w-full bg-white text-black")}>
         <div>
-          <div >
+          
 
-          <NAV />
-          </div>
-          <div className="p-[130px] w-full">{children}</div>
+          
+          <div className=" w-full">{children}</div>
+          
+          <Footer />
+          
         </div>
       </body>
     </html>

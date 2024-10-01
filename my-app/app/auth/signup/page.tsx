@@ -1,105 +1,81 @@
 "use client";
 
-import * as Z from 'zod'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
+import Link from "next/link"
+import { ArrowLeft } from "lucide-react"; 
+import { Button } from "@/components/ui/button"
+
 import {
-    Form,
-    FormField,
-    FormItem,
-    FormMessage,
-    FormLabel,
-    FormControl
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 
+export const description =
+  "A sign up form with first name, last name, email and password inside a card. There's an option to sign up with GitHub and a link to login if you already have an account"
 
-const formSchema = Z.object({
-    emailAddress: Z.string().email(),
-    password: Z.string().min(4),
-    passwordConfirm: Z.string()
-}).refine((data) => {
-    return data.password === data.passwordConfirm
-}, {
-    message: "password and password confirm must match",
-    path: ['passwordConfirm']
-})
-
-
-const signup = () => {
-    const form = useForm<Z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-            emailAddress: '',
-            password: '',
-            passwordConfirm: ''
-
-        },
-    })
-    const handleSubmit = (values: Z.infer<typeof formSchema>) => {
-        console.log({ values })
-    }
-
-    return (
-        <div className='flex min-h-screen flex-col items-center justify-between p-24'>
-            <Form {...form}>
-                <form onSubmit={form.handleSubmit(handleSubmit)} className='max-w-md w-full flex flex-col gap-4'>
-                    <FormField
-                        control={form.control}
-                        name="emailAddress"
-                        render={({ field }) => {
-                            return <FormItem>
-                                <FormLabel>Email address</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        placeholder='Email address'
-                                        type='email' {...field}
-                                    />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        }}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="password"
-                        render={({ field }) => {
-                            return <FormItem>
-                                <FormLabel>Password</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        placeholder='Password'
-                                        type='password'
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        }}
-                    />
-                    <FormField
-                        control={form.control}
-                        name="passwordConfirm"
-                        render={({ field }) => {
-                            return <FormItem>
-                                <FormLabel>Password confrim</FormLabel>
-                                <FormControl>
-                                    <Input
-                                        placeholder='Password confirm'
-                                        type='password'
-                                        {...field}
-                                    />
-                                </FormControl>
-                                <FormMessage />
-                            </FormItem>
-                        }}
-                    />
-                    <Button type='submit' className='w-full '>Sign up</Button>
-                </form>
-            </Form>
+const  signup = () =>{
+  return (
+    <div className="max-h-0 ">
+         <Link href="/home" className="pl-4" >
+        <button>
+          <ArrowLeft className="h-10 w-10" />
+        </button>
+      </Link>
+      <div className="flex justify-center pt-40"> 
+    <Card className="mx-auto max-w-sm">
+      <CardHeader>
+        <CardTitle className="text-xl">Sign Up</CardTitle>
+        <CardDescription>
+          Enter your information to create an account
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="grid gap-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="first-name">First name</Label>
+              <Input id="first-name" placeholder="Max" required />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="last-name">Last name</Label>
+              <Input id="last-name" placeholder="Robinson" required />
+            </div>
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
+              type="email"
+              placeholder="m@example.com"
+              required
+            />
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="password">Password</Label>
+            <Input id="password" type="password" />
+          </div>
+          <Button type="submit" className="w-full">
+            Create an account
+          </Button>
+          <Button variant="outline" className="w-full">
+            Sign up with Google
+          </Button>
         </div>
-    )
+        <div className="mt-4 text-center text-sm">
+          Already have an account?{" "}
+          <Link href="/auth/login" className="underline">
+            Sign in
+          </Link>
+        </div>
+      </CardContent>
+    </Card>
+    </div>
+    </div>
+  )
 }
 
 export default signup

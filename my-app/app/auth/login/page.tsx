@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button"
-
+import { ArrowLeft } from "lucide-react";
+import Link from 'next/link';
 import {
   Card,
   CardContent,
@@ -14,27 +15,40 @@ import { Label } from "@/components/ui/label"
 
 const login = () => {
   return (
-    <Card className="w-full max-w-sm">
-      <CardHeader>
-        <CardTitle className="text-2xl">Login</CardTitle>
-        <CardDescription>
-          Enter your email below to login to your account.
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="grid gap-4">
-        <div className="grid gap-2">
-          <Label htmlFor="email">Email</Label>
-          <Input id="email" type="email" placeholder="m@example.com" required />
+    <div className="max-h-0 ">
+      <Link href="/home" className="pl-4">
+        <button>
+          <ArrowLeft className="h-10 w-10" />
+        </button>
+      </Link>
+      <div className="flex justify-center pt-40">
+        <div>
+
         </div>
-        <div className="grid gap-2">
-          <Label htmlFor="password">Password</Label>
-          <Input id="password" type="password" required />
-        </div>
-      </CardContent>
-      <CardFooter>
-        <Button className="w-full">Sign in</Button>
-      </CardFooter>
-    </Card>
+        <Card className="w-full max-w-sm">
+          <CardHeader>
+            <CardTitle className="text-2xl">Login</CardTitle>
+            <CardDescription>
+              Enter your email below to login to your account.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" type="email" placeholder="m@example.com" required />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="password">Password</Label>
+              <Input id="password" type="password" required />
+            </div>
+          </CardContent>
+          <CardFooter>
+            <Button className="w-full">Sign in</Button>
+          </CardFooter>
+        </Card>
+      </div>
+    </div>
+
   )
 }
 export default login
